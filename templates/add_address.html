@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online System</title>
+    
+    <link rel="shortcut icon" href="images/shortico.ico">
+	<!-- BOOTSTRAP STYLES-->
+    <link href="../style/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+     <!-- FONTAWESOME STYLES-->
+    <link href="../style/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <!-- CUSTOM STYLES-->
+    <link href="../style/css/custom.css" rel="stylesheet" type="text/css"/>
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   
+</head>
+<body>
+
+    
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">OL</a> 
+            </div>
+			<div style="color: white;padding: 15px 50px 5px 50px;float:right;font-size: 16px;"> 
+	        <a href="#" class="btn btn-danger square-btn-adjust">Get a book</a> 
+			 <a href="/rent" class="btn btn-danger square-btn-adjust">Rent a book</a> 
+			  <a href="/donate" class="btn btn-danger square-btn-adjust">Donate a book</a> </div>
+			
+        </nav>   
+        <!-- /. NAV TOP  -->
+
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+
+                     
+                    
+                   <li>
+                        <a  href="personal_info.html">Personal Information<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                               <li>
+                                <a  href="/update_email">Update Email/Moblie </a>
+                            </li>
+                            <li>
+                                <a class="active-menu" href="#">Addresses</a>
+                            </li>
+                            <li>
+                                <a   href="/change_password">Change Password</a>
+                            </li>
+                        </ul>
+                      </li>   
+
+                        
+                   <li>
+                        <a  href="#">Your Orders</a>
+                    </li>
+                    <li  >
+                        <a   href="#">Offers</a>
+                    </li>	
+					<li>
+						<a href="#">Credits</a>
+					</li>
+                			
+					
+					                   
+                </ul>
+            </div>
+        </nav>  
+        <!-- /. NAV SIDE  -->
+
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Prsonal Information</h2>   
+                        <h5><!--
+                            <h1>Welcome student ?php echo $login_session; ?></h1> 
+                            <h2><a href = "index.html">Sign Out</a></h2>
+                            -->
+                        </h5>  
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <hr/>
+				
+				 <div class="form-group" >
+                    <div class="row">
+					<div class="col-md-12"><div id="fullname" class="form-group"><label class="control-label">Name</label></div></div></div>
+                        <div class="row">
+							<div class="col-md-4">
+								<div id="n" class="form-group">
+									<input type="text" id="fname" class="form-control" name="name" required placeholder="Name">
+									<h6 id="nf" class="control-label" for="inputError">Required*</h6>
+                                </div>
+							</div>
+						</div>
+					
+					 <div class="col-md-4">
+                                     <div class="row"><div id="haa" class="form-group"><label class="control-label">Home Address</label></div>
+                                                <textarea id="hadd" rows="3" class="form-control" name="hm_add" ></textarea>   
+                                                <h6 id="ha" class="control-label" for="inputError">Required*</h6>
+                                            </div>
+                                    </div>
+					 <div class="row">				
+					<div class="col-md-12"><div id="landmark" class="form-group"><label class="control-label">Landmark</label></div></div></div>
+                        <div class="row">
+							<div class="col-md-4">
+								<div id="n" class="form-group">
+									<input type="text" id="lmark" class="form-control" name="lmark" required placeholder="Landmark">
+									   <h6 id="ha" class="control-label" for="inputError">Required*</h6>
+                                </div>
+							</div>
+						</div>
+					
+					<div class="row">				
+					<div class="col-md-12"><div id="city" class="form-group"><label class="control-label">City</label></div></div></div>
+                        <div class="row">
+							<div class="col-md-4">
+								<div id="n" class="form-group">
+									<input type="text" id="city" class="form-control" name="city" required placeholder="City">
+								
+                                </div>
+							</div>
+						</div>
+						
+							<div class="row">
+						 <div class="col-md-4">
+                                            <div id="ph" class="form-group"><label class="control-label">Phone Number</label></div>
+                                                <script>
+                                                    function chkph1(z){
+                                                        var x = z.value;
+                                                        if( x == "" || isNaN( x ) || x.length != 10 ){
+                                                            document.getElementById("p").innerHTML = "";
+                                                            document.getElementById("ph").className = "form-group has-error";
+                                                            var t = document.createTextNode("Enter valid phone number");
+                                                            document.getElementById("p").appendChild(t);
+                                                        }
+                                                        else{
+                                                            document.getElementById("p").innerHTML = "";
+                                                            document.getElementById("ph").className = "form-group has-success";
+                                                        }
+                                                    }
+                                                    function chkph2(z){
+                                                        var x = z.value;
+                                                        if( isNaN( x ) || x.length != 10 ){
+                                                            document.getElementById("p1").innerHTML = "";
+                                                            document.getElementById("ph1").className = "form-group has-error";
+                                                            var t = document.createTextNode("Enter valid phone number");
+                                                            document.getElementById("p1").appendChild(t);
+                                                        }
+                                                        else{
+                                                            document.getElementById("p1").innerHTML = "";
+                                                            document.getElementById("ph1").className = "form-group has-success";
+                                                        }
+                                                    }
+                                                </script>
+                                                <input type="text" id="phno1" class="form-control" name="phno1" required placeholder="Phone Number" onblur="chkph1(this)">
+                                                <h6 id="p" class="control-label" for="inputError">Required*</h6>
+                                            </div>
+                                      
+                        
+				</div>
+				 <a  class="btn btn-default btn-lg">Add Address</a>
+            </div>
+             <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+
+    </div>
+     <!-- /. WRAPPER  -->
+
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+    <script src="assets/js/jquery.validate.js"></script>
+
+    
+   
+</body>
+</html>

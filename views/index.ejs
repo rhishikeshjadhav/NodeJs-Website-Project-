@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online System</title>
+    
+    <link rel="shortcut icon" href="images/shortico.ico">
+	<!-- BOOTSTRAP STYLES-->
+    <link href="../style/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+     <!-- FONTAWESOME STYLES-->
+    <link href="../style/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <!-- CUSTOM STYLES-->
+    <link href="../style/css/custom.css" rel="stylesheet" type="text/css"/>
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   	
+</head>
+<body>
+
+
+   
+
+
+    
+    <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h3>Available Books</h3>   
+                     <h4>History</h4>
+                    </div>
+                </div>
+                <hr/>
+  
+				<div class="col-md-5 no-border">
+                    <table class="table table-striped table-bordered table-hover">
+                        
+                          <tr>
+    <th>Name</th>
+    <th>Author</th>
+        <th>Language</th>
+        <th>Read!!</th>
+    </tr>
+                      
+                    <% for(var i=0; i < data.length; i++) { %>
+   <% if(data[i].a_date<Date.now() && data[i].t_date>=Date.now())
+                            {%>
+                                
+                           
+   <tr>
+     <td><%=i%></td>
+     <td><%= data[i].name %></td>
+    <td><%= data[i].lang %></td>
+      <td>><a class="btn btn-default btn-sm">Get</a></td> 
+
+   </tr><% }%>
+                        
+<% } %>
+                        
+    <div>            
+<% for(var i=0; i < data1.length; i++) { %>
+    
+   <tr>
+     <td id="name"><%= data1[i].name%></td>
+     <td  class="bci"><%= data1[i].author%></td>
+       <td class="ibc"><%= data1[i].lang%></td>
+    <td><a id='<%= i %>' class="btn btn-default btn-sm">Get</a></td> 
+   </tr>
+ 
+<% } %>
+ 			     
+   </div>                        
+<script>
+
+    
+ 
+    +
+   $(document).on('click', <%=i%>, function ()  {
+     var value=$("#name").text();
+       alert("Value:"+value);});
+//$(document).ready(function(){
+//    $("#get").click(function(){
+//     
+//       
+//        $.post("demo_test_post.asp",
+//        {("#author").text()
+//          name: "Donald Duck",
+//          city: "Duckburg"
+//        },
+//        function(data,status){
+//            alert("Data: " + data + "\nStatus: " + status);
+//        });*/
+//    });
+//});
+//    
+//    $(document).ready(function(){
+//    $("td").click(function(){
+//        $(".abc").each(function(){
+//           var value=$(".abc").text();
+//            alert("Value: "+value);
+//        });
+//    });
+
+</script>                       
+                        
+<% for(var i=0; i < data2.length; i++) { %>
+    
+   <tr>
+     <td id><%= data2[i].name %></td>
+     <td><%= data2[i].author%></td>
+       <td><%= data2[i].lang%></td>
+    <td ><button type="submit"><a class="btn btn-default btn-sm">Get</a></button></td>
+   </tr>
+<% } %>
+				
+			</table>	
+         
+                </div>
+			<!-- /. PAGE INNER  -->
+        </div><!-- /. PAGE WRAPPER  -->
+
+    </div>
+
+</body>
+</html>

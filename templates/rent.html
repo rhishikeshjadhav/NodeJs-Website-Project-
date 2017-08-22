@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online System</title>
+    
+    <link rel="shortcut icon" href="images/shortico.ico">
+	<!-- BOOTSTRAP STYLES-->
+    <link href="../style/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+     <!-- FONTAWESOME STYLES-->
+    <link href="../style/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <!-- CUSTOM STYLES-->
+    <link href="../style/css/custom.css" rel="stylesheet" type="text/css"/>
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   
+    
+    		     <script type="text/javascript">
+      $(function(){
+           
+        $('#donate').click(function(evt){
+          evt.preventDefault();
+          $.ajax({
+              
+            url: '/rent',
+            type:'POST',
+			data:{b_name=document.getElementById("b_name")}, 
+            success:function(data){
+              //console.log(data);
+			
+            },
+            error:function(error){
+              console.log(error);
+            }
+          })
+        })
+      })
+     
+    </script>
+</head>
+<body>
+
+    
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">OL</a> 
+            </div>
+			<div style="color: white;padding: 15px 50px 5px 50px;float:right;font-size: 16px;"> 
+	        <a href="#" class="btn btn-danger square-btn-adjust">Get a book</a> 
+			 <a href="#" class="btn btn-danger square-btn-adjust">Rent a book</a> 
+			  <a href="/donate" class="btn btn-danger square-btn-adjust">Donate a book</a> </div>
+			
+        </nav>   
+        <!-- /. NAV TOP  -->
+
+         
+        <!-- /. NAV SIDE  -->
+
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Rent Your Book</h2>   
+                        <h5><!--
+                            <h1>Welcome student ?php echo $login_session; ?></h1> 
+                            <h2><a href = "index.html">Sign Out</a></h2>
+                            -->
+                        </h5>  
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <hr/>
+                <div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><label>Thank You For Sharing </label></div>
+                            <div class="panel-body">
+                                <!--Email ID, Branch-->
+                                <form class="form-signin" method="post" action="/rent">
+                                <div class="form-group">
+                               <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                            <div id="b_name" class="form-group"><label class="control-label">Name of the Book</label>
+                                                <input type="text" id="b_name" class="form-control" name="b_name" required placeholder="Book Name " >
+                                           
+                                            </div>
+                                                </div>
+                                                
+                                            <div class="col-md-4">
+                                                  <div ><label class="control-label">Book Type</label>
+										      <select name="category" id="category" class="form-control" >
+                                                    <option value="" selected="selected" disabled="disabled">Select Book Type</option>
+                                                    <option>History</option>
+                                                    <option>Philosophy</option>
+                                                    <option>Literature</option>
+                                                  
+                                                </select>
+                                            </div> </div>
+                                            <div class="col-md-4">
+                                                 <div ><label class="control-label">Language of the Book</label>
+												 <select name="lang" id="lang" class="form-control" >
+                                                    <option value="" selected="selected" disabled="disabled">Select Language</option>
+                                                    <option>English</option>
+                                                    <option>Marathi</option>
+                                                    <option>Hindi</option>
+                                                  
+                                                </select>
+                                                </div>
+                                                </div>
+                                   </div>
+                                   </div>
+                                   <div class="row">
+                                    <div class="col-md-4">
+                                             <div id="a_name" class="form-group"><label class="control-label">Name of the Auther</label>
+                                                <input type="text" id="a_name" class="form-control" name="a_name" required placeholder="Auther's Name " >
+                                           </div>
+                                            </div>
+                                                
+                                        
+                                   
+                               
+                                   <div class="col-md-4">
+                                                 <div ><label class="control-label">Number of the Book</label>
+												 <select name="copies" id="copies" class="form-control" >
+                                                    <option value="" selected="selected" disabled="disabled">Select Copies</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                  
+                                                </select>
+                                                </div>
+                                                </div>
+                                        
+                                    </div>
+                                    
+                                    
+                                         <div class="row">
+                                              <div id="date" class="form-group"><label class="control-label">Book Available For Duration:</label></div>
+                                    <div class="col-md-4">
+                                             <div id="date" class="form-group"><label class="control-label">Book Available From:</label></div>
+                                                <input type="date" id="a_date" class="form-control" name="a_date" required placeholder="Available From">
+                                         
+                                            </div>
+                                         <div class="col-md-4">
+                                              <div id="date" class="form-group"><label class="control-label">Book Available Till:</label></div>
+                                                <input type="date" id="t_date" class="form-control" name="t_date" required placeholder="Available Till">
+                                         
+                                            </div>
+                                             </div>  
+                                        </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                                   
+                        <button  id="donate" type="submit"><a class="btn btn-default btn-lg">Rent</a></button>
+
+                                
+                   
+                                </div>
+                              </form>
+                               
+                             
+                                
+                            </div><!--/. PANEL-BODY -->
+                    </div><!--/. PANEL PANEL-DEFAULT -->
+
+                    </div>
+
+                </div>
+            </div>
+             <!-- /. PAGE INNER  -->
+       
+        <!-- /. PAGE WRAPPER  -->
+
+ 
+        
+    
+    
+    
+    
+
+     <!-- /. WRAPPER  -->
+
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+    <script src="assets/js/jquery.validate.js"></script>
+
+    
+   
+</body>
+</html>

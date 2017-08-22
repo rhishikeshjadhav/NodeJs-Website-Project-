@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online System</title>
+    
+    <link rel="shortcut icon" href="images/shortico.ico">
+	<!-- BOOTSTRAP STYLES-->
+    <link href="../style/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+     <!-- FONTAWESOME STYLES-->
+    <link href="../style/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <!-- CUSTOM STYLES-->
+    <link href="../style/css/custom.css" rel="stylesheet" type="text/css"/>
+     <!-- GOOGLE FONTS-->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   
+</head>
+<body>
+
+    
+    <div id="wrapper">
+
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">OL</a> 
+            </div>
+			<div style="color: white;padding: 15px 50px 5px 50px;float:right;font-size: 16px;"> 
+	        <a href="#" class="btn btn-danger square-btn-adjust">Get a book</a> 
+			<a href="/rent" class="btn btn-danger square-btn-adjust">Rent a book</a>
+			  <a href="/donate" class="btn btn-danger square-btn-adjust">Donate a book</a> </div>s
+			
+        </nav>   
+        <!-- /. NAV TOP  -->
+
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+
+                     
+                    
+					<li>
+                        <a  href="personal_info.html">Personal Information<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a class="active-menu" href="#">Update Email/Moblie </a>
+                            </li>
+                            <li>
+                                <a href="/add_address">Addresses</a>
+                            </li>
+                             <li>
+                                <a   href="/change_password">Change Password</a>
+                            </li>
+                        </ul>
+                      </li> 
+
+                        
+                   <li>
+                        <a  href="#">Your Orders</a>
+                    </li>
+                    <li  >
+                        <a   href="#">Offers</a>
+                    </li>	
+					<li>
+						<a href="#">Credits</a>
+					</li>
+                			
+					
+					                   
+                </ul>
+            </div>
+        </nav>  
+        <!-- /. NAV SIDE  -->
+
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>Prsonal Information</h2>   
+                        <h5><!--
+                            <h1>Welcome student ?php echo $login_session; ?></h1> 
+                            <h2><a href = "index.html">Sign Out</a></h2>
+                            -->
+                        </h5>  
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <hr/>
+                <div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><label>Update Email/Moblie</label></div>
+                         
+						   <div class="panel-body">
+						    <form id="submit" method="post" action="/">
+                                <!--Email ID, Branch-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div id="email" class="form-group"><label class="control-label">Email ID</label>
+                                                <input type="email" id="email_id" class="form-control" name="email" required placeholder="Email ID" >
+                                                <h6 id="email_error" class="control-label" >Required*</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                               
+                                <!--Phone Number-->    
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div id="ph" class="form-group"><label class="control-label">Phone Number</label>
+                                                <script>
+                                                    function chkph1(z){
+                                                        var x = z.value;
+                                                        if( x == "" || isNaN( x ) || x.length != 10 ){
+                                                            document.getElementById("p").innerHTML = "";
+                                                            document.getElementById("ph").className = "form-group has-error";
+                                                            var t = document.createTextNode("Enter valid phone number");
+                                                            document.getElementById("p").appendChild(t);
+                                                        }
+                                                        else{
+                                                            document.getElementById("p").innerHTML = "";
+                                                            document.getElementById("ph").className = "form-group has-success";
+                                                        }
+                                                    }
+                                                    function chkph2(z){
+                                                        var x = z.value;
+                                                        if( isNaN( x ) || x.length != 10 ){
+                                                            document.getElementById("p1").innerHTML = "";
+                                                            document.getElementById("ph1").className = "form-group has-error";
+                                                            var t = document.createTextNode("Enter valid phone number");
+                                                            document.getElementById("p1").appendChild(t);
+                                                        }
+                                                        else{
+                                                            document.getElementById("p1").innerHTML = "";
+                                                            document.getElementById("ph1").className = "form-group has-success";
+                                                        }
+                                                    }
+                                                </script>
+                                                <input type="text" id="phno1" class="form-control" name="phno1" required placeholder="Phone Number" onblur="chkph1(this)">
+                                                <h6 id="p" class="control-label" for="inputError">Required*</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div id="ph1" class="form-group"><label class="control-label">Alternate Phone Number</label>
+                                                <input type="text" id="phno2" class="form-control" name="phno2" required placeholder="Phone Number" onblur="chkph2(this)">
+                                                <h6 id="p1" class="control-label" for="inputError"></h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                </div>
+								
+                            </div><!--/. PANEL-BODY -->
+                    </div><!--/. PANEL PANEL-DEFAULT -->
+
+                    <div class="form-group">
+                      <script>
+                            function verif(id){
+                                 var a = document.getElementById("email_error").textContent;
+                                 var b = document.getElementById("br_error").textContent;
+                                 var c = document.getElementById("nf").textContent;
+                                 var d = document.getElementById("lf").textContent;
+                                 var e = document.getElementById("mf").textContent;
+                                 var f = document.getElementById("gen_error").textContent;
+                                 var g = document.getElementById("phflg_error").textContent;
+                                 var h = document.getElementById("dob_error").textContent;
+                                 var i = document.getElementById("cate_error").textContent;
+                                 var j = document.getElementById("nat_error").textContent;
+                                 var k = document.getElementById("ha").textContent;
+                                 var l = document.getElementById("ac").textContent;
+                                 var m = document.getElementById("p").textContent;
+                                 if( a == '' && b == '' && c == '' && d == '' && e == '' && f == '' && g == '' && h == '' && i == '' && j == '' && k == '' && l == '' && m == '' )
+                                 {
+                                    if (confirm('Are you sure you want to Register?')) {
+                                       register(id); // Save it!
+                                    } else {
+                                        window.location='index.html';
+                                    }
+                                     
+                                 }
+                                 else
+                                    alert('Fill Required Details');
+                            }
+                            function register(id){
+                                var fname = $("#fname").val();
+                                var mname = $("#mname").val();
+                                var lname = $("#lname").val();
+                                var momname = $("#momname").val();
+                                var gender = $("input[name=gender]:checked").val();
+                                var year = $('#DOBYear').val();
+                                var month = $('#DOBMonth').val();
+                                var day = $('#DOBDay').val();
+                                var ph_stat = $("input[name=ph_flag]:checked").val();
+                                var category = $('#selcategory').val();
+                                var nation = $('#selnation').val();
+                                var hmadd = $("#hmadd").val();
+                                var altadd = $("#altadd").val();
+                                var email = $("#email_id").val();
+                                var phno = $("#phno1").val();
+                                var altphno = $("#phno2").val();
+                                var brid = $('#selbranch').val();
+                                
+                            $.ajax({
+                                    type: "POST",
+                                    url: "php/studentregistration.php",
+                                    data: {fname: fname,
+                                        mname: mname,
+                                        lname: lname,
+                                        momname: momname,
+                                        gender: gender,
+                                        DOBYear: year,
+                                        DOBMonth: month,
+                                        DOBDay: day,
+                                        ph_flag: ph_stat,
+                                        sel_category: category,
+                                        sel_nation: nation,
+                                        hm_add: hmadd,
+                                        alt_add: altadd,
+                                        email: email,
+                                        phno1: phno,
+                                        phno2: altphno,
+                                        sel_branch: brid,
+                                        },
+                                    cache: false,
+                                    success: function(result){
+                                        $(".panel-collapse").collapse('show');
+                                        alert('Regsistration Successful.  '+result+'. Check Email for Verification.');
+                                        window.location='index.html'
+                                    },
+                                    error : function(error){alert('failed');}
+                                });
+                            }
+                        </script>
+                        <a   class="btn btn-default btn-lg">Update</a>
+							 
+	 <script>
+	 $(document).ready(function  () {
+	 	$("#submit").on("submit",function  (e) {
+	 		e.preventDefault();
+	 		console.log();
+	 		$.post("/",$(this).serialize(), function( data ) {
+			  console.log(data);
+			});
+	 	})
+	 });
+ 	</script>
+                    </div>
+</form>
+                </div>
+				
+            </div>
+             <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+
+    </div>
+     <!-- /. WRAPPER  -->
+
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+    <script src="assets/js/jquery.validate.js"></script>
+
+    
+   
+</body>
+</html>
